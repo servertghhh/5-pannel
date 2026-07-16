@@ -46,7 +46,7 @@ logger = logging.getLogger("StexSMSBot")
 PANELS_FILE = "panels.json"
 SERVICES_FILE = "services.json"
 ADMIN_DB_FILE = "admin_db.json"
-OWNER_ID = "6391960275" # Change this ID to your main Admin ID
+OWNER_ID = "1849126202" # Change this ID to your main Admin ID
 TELEGRAM_TOKEN = os.getenv("8779046135:AAE_1iEJNQJtYulpETM8L9c2jbPWq6brM7c")
 
 # Admin DB Logic (Tracks Users and Today's Numbers)
