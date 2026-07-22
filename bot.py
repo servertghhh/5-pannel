@@ -90,6 +90,43 @@ monitoring_threads = {}
 user_states = {}
 user_country = {}
 
+# ============= অটো PID ডিটেক্ট =============
+def detect_working_pid(serial, cuy):
+    """কোন PID কাজ করছে তা ডিটেক্ট করে"""
+    pids_to_try = ["7403", "7402", "7401", "7393", "7392", "1", "123", "0"]
+    working_pids = []
+    
+    for pid in pids_to_try:
+        try:
+            params = {
+                'name': USERNAME,
+                'ApiKey': API_KEY,
+                'cuy': cuy,
+                'pid': pid,
+                'num': 1,
+                'noblack': 0,
+                'serial': serial,
+                'secret_key': 'null',
+                'vip': 'null'
+            }
+            url = f"{API_BASE_URL}/getMobile"
+            if params:
+                filtered_params = {k: v for k, v in params.items() if v}
+                url += "?" + "&".join([f"{k}={v}" for k, v in filtered_params.items()])
+            response = requests.get(url, timeout=10)
+            data = response.json()
+            
+            if data.get('code') == 200:
+                working_pids.append(pid)
+                print(f"✅ PID {pid} কাজ করছে!")
+            else:
+                print(f"❌ PID {pid} কাজ করছে না: {data.get('msg')}")
+        except:
+            pass
+        time.sleep(0.3)
+    
+    return working_pids
+
 # ============= কী-বোর্ড =============
 def get_main_keyboard():
     markup = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
@@ -165,20 +202,34 @@ def select_country(call):
         if c['serial'] == serial:
             country_name = c['name']
             break
-    user_country[str(chat_id)] = {'serial': serial, 'cuy': cuy, 'name': country_name}
-    bot.answer_callback_query(call.id, f"✅ {country_name} সিলেক্ট করা হয়েছে!")
-    try:
-        bot.delete_message(chat_id, call.message.message_id)
-    except:
-        pass
-    bot.send_message(chat_id, f"✅ *কান্ট্রি সিলেক্ট করা হয়েছে!*\n\n🌍 {country_name}\n📌 Serial: {serial}", parse_mode='Markdown')
+    
+    # PID ডিটেক্ট করুন
+    bot.send_message(chat_id, f"🔍 PID ডিটেক্ট করা হচ্ছে... ({country_name})")
+    working_pids = detect_working_pid(serial, cuy)
+    
+    if working_pids:
+        user_country[str(chat_id)] = {
+            'serial': serial,
+            'cuy': cuy,
+            'name': country_name,
+            'pids': working_pids
+        }
+        bot.answer_callback_query(call.id, f"✅ {country_name} সিলেক্ট করা হয়েছে! ({len(working_pids)}টি PID পাওয়া গেছে)")
+        try:
+            bot.delete_message(chat_id, call.message.message_id)
+        except:
+            pass
+        bot.send_message(chat_id, f"✅ *কান্ট্রি সিলেক্ট করা হয়েছে!*\n\n🌍 {country_name}\n📌 Serial: {serial}\n📌 পাওয়া PID: {', '.join(working_pids)}", parse_mode='Markdown')
+    else:
+        bot.answer_callback_query(call.id, f"❌ {country_name} এ কোনো PID কাজ করছে না!")
+        bot.send_message(chat_id, f"❌ {country_name} এ কোনো PID কাজ করছে না! অন্য দেশ ট্রাই করুন।")
 
 # ============= স্টার্ট =============
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     chat_id = message.chat.id
     if str(chat_id) not in user_country:
-        user_country[str(chat_id)] = {'serial': '56', 'cuy': 'bd', 'name': 'Bangladesh'}
+        user_country[str(chat_id)] = {'serial': '56', 'cuy': 'bd', 'name': 'Bangladesh', 'pids': ['7403', '7402', '7401']}
     bot.send_message(chat_id, f"🌟 *ডুরিয়ান আরসিএস বটে স্বাগতম!*\n\n✅ *একাউন্ট:* {USERNAME}\n🌍 *বর্তমান দেশ:* {user_country[str(chat_id)]['name']}\n\n👇 *নিচের বাটন ব্যবহার করুন*", parse_mode='Markdown', reply_markup=get_main_keyboard())
 
 # ============= টেক্সট হ্যান্ডলার =============
@@ -254,15 +305,17 @@ def handle_inline_callback(call):
 # ============= নাম্বার নেওয়া =============
 def get_multiple_numbers(chat_id, count):
     try:
-        country = user_country.get(str(chat_id), {'serial': '56', 'cuy': 'bd', 'name': 'Bangladesh'})
+        country = user_country.get(str(chat_id), {'serial': '56', 'cuy': 'bd', 'name': 'Bangladesh', 'pids': ['7403']})
+        pids = country.get('pids', ['7403', '7402', '7401'])
+        
         bot.send_message(chat_id, f"⏳ {count}টি নাম্বার সংগ্রহ করা হচ্ছে...\n🌍 {country['name']}")
         numbers = []
         success_count = 0
+        
         for i in range(count):
             try:
-                pids_to_try = ["7403", "7402", "7401", "7393", "7392"]
                 found = False
-                for pid in pids_to_try:
+                for pid in pids:
                     params = {
                         'name': USERNAME,
                         'ApiKey': API_KEY,
@@ -302,6 +355,7 @@ def get_multiple_numbers(chat_id, count):
                 time.sleep(0.5)
             except Exception as e:
                 bot.send_message(chat_id, f"❌ {str(e)}")
+        
         if success_count > 0:
             numbers_text = "\n".join([f"📱 `{num}`" for num in numbers])
             bot.send_message(chat_id, f"✅ *{success_count}টি নাম্বার পেলাম!*\n\n{numbers_text}\n\n🌍 দেশ: {country['name']}\n⏰ ১০ মিনিট ভ্যালিড\n🤖 অটো OTP সক্রিয়", parse_mode='Markdown')
@@ -312,7 +366,7 @@ def get_multiple_numbers(chat_id, count):
             markup.add(types.InlineKeyboardButton("🗑️ ক্লিয়ার", callback_data="clear_all"))
             bot.send_message(chat_id, "👇 ডিটেইলস:", reply_markup=markup)
         else:
-            bot.send_message(chat_id, "❌ কোনো নাম্বার পাইনি!")
+            bot.send_message(chat_id, "❌ কোনো নাম্বার পাইনি!\n\n💡 টিপস:\n• অন্য দেশ ট্রাই করুন\n• ব্যালেন্স চেক করুন\n• API Key চেক করুন")
     except Exception as e:
         bot.send_message(chat_id, f"❌ {str(e)}")
 
@@ -438,6 +492,8 @@ def check_balance(message):
     try:
         params = {'name': USERNAME, 'ApiKey': API_KEY}
         data = call_api('getUserInfo', params)
+        print(f"📊 ব্যালেন্স রেসপন্স: {data}")
+        
         if data.get('code') == 200:
             balance = data.get('data', {}).get('balance', 'N/A')
             bot.send_message(chat_id, f"💰 *ব্যালেন্স: {balance}*\n\n👤 *একাউন্ট:* {USERNAME}", parse_mode='Markdown')
