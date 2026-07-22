@@ -89,7 +89,7 @@ user_data = {}
 monitoring_threads = {}
 user_states = {}
 user_country = {}
-user_search = {}  # সার্চ স্টেট ট্র্যাক করার জন্য
+user_search = {}
 
 # ============= কী-বোর্ড =============
 def get_main_keyboard():
@@ -157,7 +157,7 @@ def search_country_prompt(message):
         parse_mode='Markdown'
     )
 
-# ============= টেক্সট হ্যান্ডলার (সার্চ) =============
+# ============= টেক্সট হ্যান্ডলার =============
 @bot.message_handler(func=lambda message: True)
 def handle_text_messages(message):
     chat_id = message.chat.id
@@ -165,13 +165,11 @@ def handle_text_messages(message):
     
     # ===== সার্চ মোড =====
     if str(chat_id) in user_search and user_search[str(chat_id)]:
-        # সার্চ করুন
         results = search_country(text)
         
         if results:
-            # রেজাল্ট দেখান
             markup = types.InlineKeyboardMarkup(row_width=2)
-            for country in results[:20]:  # সর্বোচ্চ ২০টা দেখান
+            for country in results[:20]:
                 btn = types.InlineKeyboardButton(
                     f"🌍 {country['name']} ({country['cuy'].upper()})", 
                     callback_data=f"country_{country['serial']}_{country['cuy']}"
@@ -229,10 +227,6 @@ def handle_text_messages(message):
     
     elif text == '📜 Active Numbers':
         show_active_numbers(message)
-    
-    elif text == '🔍 Search Country':
-        # ইতিমধ্যে হ্যান্ডল করা হয়েছে
-        pass
     
     else:
         bot.send_message(chat_id, "❓ বাটন ব্যবহার করুন:", reply_markup=get_main_keyboard())
@@ -313,7 +307,6 @@ def send_welcome(message):
     if str(chat_id) not in user_country:
         user_country[str(chat_id)] = {'serial': '56', 'cuy': 'bd', 'name': 'Bangladesh'}
     
-    # ব্যালেন্স দেখান
     try:
         params = {'name': USERNAME, 'ApiKey': API_KEY}
         data = call_api('getUserInfo', params)
@@ -342,7 +335,6 @@ def get_multiple_numbers(chat_id, count):
         numbers = []
         success_count = 0
         
-        # আপনার PID গুলো (Project ID)
         pids_to_try = ["7403", "7402", "7401", "7393", "7392"]
         
         for i in range(count):
