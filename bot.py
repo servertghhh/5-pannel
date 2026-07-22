@@ -20,65 +20,65 @@ print("✅ কনফিগারেশন লোড হয়েছে")
 
 # ============= সাপোর্টেড কান্ট্রি (আপনার স্ক্রিনশট থেকে) =============
 COUNTRIES = [
-    {"serial": "1", "name": "Argentina", "cuy": "ar"},
-    {"serial": "2", "name": "Australia", "cuy": "au"},
-    {"serial": "3", "name": "Austria", "cuy": "at"},
-    {"serial": "4", "name": "Bahrain", "cuy": "bh"},
-    {"serial": "5", "name": "Brazil", "cuy": "br"},
-    {"serial": "6", "name": "Chile", "cuy": "cl"},
-    {"serial": "7", "name": "Colombia", "cuy": "co"},
-    {"serial": "8", "name": "Czech Republic", "cuy": "cz"},
-    {"serial": "9", "name": "Ecuador", "cuy": "eo"},
-    {"serial": "10", "name": "Finland", "cuy": "fi"},
-    {"serial": "11", "name": "France", "cuy": "fr"},
-    {"serial": "12", "name": "Germany", "cuy": "de"},
-    {"serial": "13", "name": "Ghana", "cuy": "gh"},
-    {"serial": "14", "name": "Hungary", "cuy": "hu"},
-    {"serial": "15", "name": "India", "cuy": "in"},
-    {"serial": "16", "name": "Indonesia", "cuy": "id"},
-    {"serial": "17", "name": "Ireland", "cuy": "ie"},
-    {"serial": "18", "name": "Japan", "cuy": "jp"},
-    {"serial": "19", "name": "Jordan", "cuy": "jo"},
-    {"serial": "20", "name": "Kenya", "cuy": "ke"},
-    {"serial": "21", "name": "Luxembourg", "cuy": "lu"},
-    {"serial": "22", "name": "Malaysia", "cuy": "my"},
-    {"serial": "23", "name": "Mexico", "cuy": "mx"},
-    {"serial": "24", "name": "Netherlands", "cuy": "nl"},
-    {"serial": "25", "name": "Nigeria", "cuy": "ng"},
-    {"serial": "26", "name": "Norway", "cuy": "no"},
-    {"serial": "27", "name": "Panama", "cuy": "pa"},
-    {"serial": "28", "name": "Philippines", "cuy": "ph"},
-    {"serial": "29", "name": "Poland", "cuy": "pl"},
-    {"serial": "30", "name": "Portugal", "cuy": "pt"},
-    {"serial": "31", "name": "Romania", "cuy": "ro"},
-    {"serial": "32", "name": "Saudi Arabia", "cuy": "sa"},
-    {"serial": "33", "name": "Singapore", "cuy": "sg"},
-    {"serial": "34", "name": "Viet Nam", "cuy": "vn"},
-    {"serial": "35", "name": "Slovenia", "cuy": "si"},
-    {"serial": "36", "name": "South Africa", "cuy": "za"},
-    {"serial": "37", "name": "Spain", "cuy": "es"},
-    {"serial": "38", "name": "Switzerland", "cuy": "ch"},
-    {"serial": "39", "name": "Thailand", "cuy": "th"},
-    {"serial": "40", "name": "UAE", "cuy": "ae"},
-    {"serial": "41", "name": "Macedonia", "cuy": "mk"},
-    {"serial": "42", "name": "Egypt", "cuy": "eg"},
-    {"serial": "43", "name": "United States", "cuy": "us"},
-    {"serial": "44", "name": "Andorra", "cuy": "ad"},
-    {"serial": "45", "name": "Afghanistan", "cuy": "af"},
-    {"serial": "46", "name": "Antigua", "cuy": "ag"},
-    {"serial": "47", "name": "Anguilla", "cuy": "ai"},
-    {"serial": "48", "name": "Albania", "cuy": "al"},
-    {"serial": "49", "name": "Armenia", "cuy": "am"},
-    {"serial": "50", "name": "Angola", "cuy": "ao"},
-    {"serial": "51", "name": "American Samoa", "cuy": "as"},
-    {"serial": "52", "name": "Aruba", "cuy": "aw"},
-    {"serial": "53", "name": "Azerbaijan", "cuy": "az"},
-    {"serial": "54", "name": "Bosnia", "cuy": "bs"},
-    {"serial": "55", "name": "Barbados", "cuy": "bb"},
-    {"serial": "56", "name": "Bangladesh", "cuy": "bd"},
-    {"serial": "57", "name": "Belgium", "cuy": "be"},
-    {"serial": "58", "name": "Burkina Faso", "cuy": "bt"},
-    {"serial": "59", "name": "Bulgaria", "cuy": "bg"},
+    {"serial": "1", "name": "Argentina", "cuy": "ar", "short": ["arg", "argentina"]},
+    {"serial": "2", "name": "Australia", "cuy": "au", "short": ["aus", "australia"]},
+    {"serial": "3", "name": "Austria", "cuy": "at", "short": ["aut", "austria"]},
+    {"serial": "4", "name": "Bahrain", "cuy": "bh", "short": ["bhr", "bahrain"]},
+    {"serial": "5", "name": "Brazil", "cuy": "br", "short": ["bra", "brazil"]},
+    {"serial": "6", "name": "Chile", "cuy": "cl", "short": ["chl", "chile"]},
+    {"serial": "7", "name": "Colombia", "cuy": "co", "short": ["col", "colombia"]},
+    {"serial": "8", "name": "Czech Republic", "cuy": "cz", "short": ["cze", "czech"]},
+    {"serial": "9", "name": "Ecuador", "cuy": "eo", "short": ["ecu", "ecuador"]},
+    {"serial": "10", "name": "Finland", "cuy": "fi", "short": ["fin", "finland"]},
+    {"serial": "11", "name": "France", "cuy": "fr", "short": ["fre", "france"]},
+    {"serial": "12", "name": "Germany", "cuy": "de", "short": ["deu", "germany"]},
+    {"serial": "13", "name": "Ghana", "cuy": "gh", "short": ["gha", "ghana"]},
+    {"serial": "14", "name": "Hungary", "cuy": "hu", "short": ["hun", "hungary"]},
+    {"serial": "15", "name": "India", "cuy": "in", "short": ["ind", "india"]},
+    {"serial": "16", "name": "Indonesia", "cuy": "id", "short": ["idn", "indonesia"]},
+    {"serial": "17", "name": "Ireland", "cuy": "ie", "short": ["irl", "ireland"]},
+    {"serial": "18", "name": "Japan", "cuy": "jp", "short": ["jpn", "japan"]},
+    {"serial": "19", "name": "Jordan", "cuy": "jo", "short": ["jor", "jordan"]},
+    {"serial": "20", "name": "Kenya", "cuy": "ke", "short": ["ken", "kenya"]},
+    {"serial": "21", "name": "Luxembourg", "cuy": "lu", "short": ["lux", "luxembourg"]},
+    {"serial": "22", "name": "Malaysia", "cuy": "my", "short": ["mys", "malaysia"]},
+    {"serial": "23", "name": "Mexico", "cuy": "mx", "short": ["mex", "mexico"]},
+    {"serial": "24", "name": "Netherlands", "cuy": "nl", "short": ["nld", "netherlands", "holland"]},
+    {"serial": "25", "name": "Nigeria", "cuy": "ng", "short": ["nga", "nigeria"]},
+    {"serial": "26", "name": "Norway", "cuy": "no", "short": ["nor", "norway"]},
+    {"serial": "27", "name": "Panama", "cuy": "pa", "short": ["pan", "panama"]},
+    {"serial": "28", "name": "Philippines", "cuy": "ph", "short": ["phl", "philippines"]},
+    {"serial": "29", "name": "Poland", "cuy": "pl", "short": ["pol", "poland"]},
+    {"serial": "30", "name": "Portugal", "cuy": "pt", "short": ["prt", "portugal"]},
+    {"serial": "31", "name": "Romania", "cuy": "ro", "short": ["rou", "romania"]},
+    {"serial": "32", "name": "Saudi Arabia", "cuy": "sa", "short": ["sau", "saudi"]},
+    {"serial": "33", "name": "Singapore", "cuy": "sg", "short": ["sgp", "singapore"]},
+    {"serial": "34", "name": "Viet Nam", "cuy": "vn", "short": ["vnm", "vietnam", "viet"]},
+    {"serial": "35", "name": "Slovenia", "cuy": "si", "short": ["svn", "slovenia"]},
+    {"serial": "36", "name": "South Africa", "cuy": "za", "short": ["zaf", "southafrica"]},
+    {"serial": "37", "name": "Spain", "cuy": "es", "short": ["esp", "spain"]},
+    {"serial": "38", "name": "Switzerland", "cuy": "ch", "short": ["che", "switzerland"]},
+    {"serial": "39", "name": "Thailand", "cuy": "th", "short": ["tha", "thailand"]},
+    {"serial": "40", "name": "UAE", "cuy": "ae", "short": ["are", "uae", "dubai"]},
+    {"serial": "41", "name": "Macedonia", "cuy": "mk", "short": ["mkd", "macedonia"]},
+    {"serial": "42", "name": "Egypt", "cuy": "eg", "short": ["egy", "egypt"]},
+    {"serial": "43", "name": "United States", "cuy": "us", "short": ["usa", "us", "america", "unitedstates"]},
+    {"serial": "44", "name": "Andorra", "cuy": "ad", "short": ["and", "andorra"]},
+    {"serial": "45", "name": "Afghanistan", "cuy": "af", "short": ["afg", "afghanistan"]},
+    {"serial": "46", "name": "Antigua", "cuy": "ag", "short": ["atg", "antigua"]},
+    {"serial": "47", "name": "Anguilla", "cuy": "ai", "short": ["aia", "anguilla"]},
+    {"serial": "48", "name": "Albania", "cuy": "al", "short": ["alb", "albania"]},
+    {"serial": "49", "name": "Armenia", "cuy": "am", "short": ["arm", "armenia"]},
+    {"serial": "50", "name": "Angola", "cuy": "ao", "short": ["ago", "angola"]},
+    {"serial": "51", "name": "American Samoa", "cuy": "as", "short": ["asm", "americansamoa"]},
+    {"serial": "52", "name": "Aruba", "cuy": "aw", "short": ["abw", "aruba"]},
+    {"serial": "53", "name": "Azerbaijan", "cuy": "az", "short": ["aze", "azerbaijan"]},
+    {"serial": "54", "name": "Bosnia", "cuy": "bs", "short": ["bih", "bosnia"]},
+    {"serial": "55", "name": "Barbados", "cuy": "bb", "short": ["brb", "barbados"]},
+    {"serial": "56", "name": "Bangladesh", "cuy": "bd", "short": ["bgd", "bangladesh", "bd"]},
+    {"serial": "57", "name": "Belgium", "cuy": "be", "short": ["bel", "belgium"]},
+    {"serial": "58", "name": "Burkina Faso", "cuy": "bt", "short": ["bfa", "burkina"]},
+    {"serial": "59", "name": "Bulgaria", "cuy": "bg", "short": ["bgr", "bulgaria"]},
 ]
 
 print(f"✅ {len(COUNTRIES)}টি দেশ লোড হয়েছে")
@@ -89,6 +89,7 @@ user_data = {}
 monitoring_threads = {}
 user_states = {}
 user_country = {}
+user_search = {}  # সার্চ স্টেট ট্র্যাক করার জন্য
 
 # ============= কী-বোর্ড =============
 def get_main_keyboard():
@@ -98,7 +99,7 @@ def get_main_keyboard():
     btn3 = types.KeyboardButton('📊 Status')
     btn4 = types.KeyboardButton('🗑️ Clear All')
     btn5 = types.KeyboardButton('ℹ️ Help')
-    btn6 = types.KeyboardButton('🌍 Change Country')
+    btn6 = types.KeyboardButton('🔍 Search Country')
     btn7 = types.KeyboardButton('📜 Active Numbers')
     markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7)
     return markup
@@ -117,80 +118,88 @@ def call_api(endpoint, params=None):
         print(f"❌ {e}")
         return {'code': 500, 'msg': str(e)}
 
-# ============= কান্ট্রি সিলেক্ট =============
-@bot.message_handler(func=lambda message: message.text == '🌍 Change Country')
-def show_countries(message):
-    chat_id = message.chat.id
-    markup = types.InlineKeyboardMarkup(row_width=2)
+# ============= কান্ট্রি সার্চ ফাংশন =============
+def search_country(query):
+    """কান্ট্রি নাম বা শর্টকাট দিয়ে সার্চ করুন"""
+    query = query.lower().strip()
+    results = []
+    
     for country in COUNTRIES:
-        btn = types.InlineKeyboardButton(f"🌍 {country['name']}", callback_data=f"country_{country['serial']}_{country['cuy']}")
-        markup.add(btn)
-    btn_cancel = types.InlineKeyboardButton("❌ বাতিল", callback_data="cancel")
-    markup.add(btn_cancel)
-    bot.send_message(chat_id, "🌍 *কান্ট্রি সিলেক্ট করুন:*", parse_mode='Markdown', reply_markup=markup)
+        # নামের সাথে মিল
+        if query in country['name'].lower():
+            results.append(country)
+        # শর্টকাটের সাথে মিল
+        elif any(query in short.lower() for short in country['short']):
+            results.append(country)
+        # কান্ট্রি কোডের সাথে মিল
+        elif query == country['cuy'].lower():
+            results.append(country)
+        # সিরিয়াল নম্বরের সাথে মিল
+        elif query == country['serial']:
+            results.append(country)
+    
+    return results
 
-@bot.callback_query_handler(func=lambda call: call.data.startswith('country_'))
-def select_country(call):
-    chat_id = call.message.chat.id
-    parts = call.data.split('_')
-    serial = parts[1]
-    cuy = parts[2]
-    country_name = "Unknown"
-    for c in COUNTRIES:
-        if c['serial'] == serial:
-            country_name = c['name']
-            break
-    user_country[str(chat_id)] = {'serial': serial, 'cuy': cuy, 'name': country_name}
-    bot.answer_callback_query(call.id, f"✅ {country_name} সিলেক্ট করা হয়েছে!")
-    try:
-        bot.delete_message(chat_id, call.message.message_id)
-    except:
-        pass
-    bot.send_message(chat_id, f"✅ *কান্ট্রি সিলেক্ট করা হয়েছে!*\n\n🌍 {country_name}\n📌 Serial: {serial}", parse_mode='Markdown')
-
-@bot.callback_query_handler(func=lambda call: call.data == 'cancel')
-def cancel_callback(call):
-    chat_id = call.message.chat.id
-    bot.answer_callback_query(call.id, "বাতিল!")
-    try:
-        bot.delete_message(chat_id, call.message.message_id)
-    except:
-        pass
-
-# ============= স্টার্ট =============
-@bot.message_handler(commands=['start'])
-def send_welcome(message):
+# ============= কান্ট্রি সিলেক্ট =============
+@bot.message_handler(func=lambda message: message.text == '🔍 Search Country')
+def search_country_prompt(message):
     chat_id = message.chat.id
-    if str(chat_id) not in user_country:
-        user_country[str(chat_id)] = {'serial': '56', 'cuy': 'bd', 'name': 'Bangladesh'}
-    
-    # ব্যালেন্স দেখান
-    try:
-        params = {'name': USERNAME, 'ApiKey': API_KEY}
-        data = call_api('getUserInfo', params)
-        balance = data.get('data', {}).get('score', 'N/A')
-    except:
-        balance = 'N/A'
-    
+    user_search[str(chat_id)] = True
     bot.send_message(chat_id, 
-        f"🌟 *ডুরিয়ান আরসিএস বটে স্বাগতম!*\n\n"
-        f"✅ *একাউন্ট:* {USERNAME}\n"
-        f"💰 *ব্যালেন্স:* {balance}\n"
-        f"🌍 *বর্তমান দেশ:* {user_country[str(chat_id)]['name']}\n\n"
-        f"👇 *নিচের বাটন ব্যবহার করুন*", 
-        parse_mode='Markdown', 
-        reply_markup=get_main_keyboard()
+        "🔍 *কান্ট্রি খুঁজুন:*\n\n"
+        "কান্ট্রির নাম, শর্টকাট বা কোড লিখুন।\n"
+        "যেমন: `bd`, `bangladesh`, `us`, `usa`, `india`\n\n"
+        "📌 *টিপস:*\n"
+        "• `bd` → বাংলাদেশ\n"
+        "• `us` → যুক্তরাষ্ট্র\n"
+        "• `uk` → যুক্তরাজ্য\n"
+        "• `in` → ভারত",
+        parse_mode='Markdown'
     )
 
-# ============= টেক্সট হ্যান্ডলার =============
+# ============= টেক্সট হ্যান্ডলার (সার্চ) =============
 @bot.message_handler(func=lambda message: True)
 def handle_text_messages(message):
     chat_id = message.chat.id
     text = message.text
     
+    # ===== সার্চ মোড =====
+    if str(chat_id) in user_search and user_search[str(chat_id)]:
+        # সার্চ করুন
+        results = search_country(text)
+        
+        if results:
+            # রেজাল্ট দেখান
+            markup = types.InlineKeyboardMarkup(row_width=2)
+            for country in results[:20]:  # সর্বোচ্চ ২০টা দেখান
+                btn = types.InlineKeyboardButton(
+                    f"🌍 {country['name']} ({country['cuy'].upper()})", 
+                    callback_data=f"country_{country['serial']}_{country['cuy']}"
+                )
+                markup.add(btn)
+            
+            btn_cancel = types.InlineKeyboardButton("❌ বাতিল", callback_data="cancel")
+            markup.add(btn_cancel)
+            
+            user_search[str(chat_id)] = False
+            bot.send_message(chat_id, 
+                f"🔍 *'{text}' এর জন্য {len(results)}টি ফলাফল পাওয়া গেছে:*", 
+                parse_mode='Markdown',
+                reply_markup=markup
+            )
+        else:
+            bot.send_message(chat_id, 
+                f"❌ '{text}' এর জন্য কোনো কান্ট্রি পাওয়া যায়নি!\n\n"
+                f"💡 আবার চেষ্টা করুন অথবা বাটন ব্যবহার করুন।",
+                reply_markup=get_main_keyboard()
+            )
+            user_search[str(chat_id)] = False
+        return
+    
+    # ===== অন্যান্য বাটন =====
     if text == '📱 Get Number' or text == '/getnumber':
         if str(chat_id) not in user_country:
-            bot.send_message(chat_id, "❌ আগে 🌍 Change Country দিয়ে দেশ সিলেক্ট করুন!")
+            bot.send_message(chat_id, "❌ আগে 🔍 Search Country দিয়ে দেশ সিলেক্ট করুন!")
             return
         markup = types.InlineKeyboardMarkup(row_width=3)
         for i in range(1, 6):
@@ -221,6 +230,10 @@ def handle_text_messages(message):
     elif text == '📜 Active Numbers':
         show_active_numbers(message)
     
+    elif text == '🔍 Search Country':
+        # ইতিমধ্যে হ্যান্ডল করা হয়েছে
+        pass
+    
     else:
         bot.send_message(chat_id, "❓ বাটন ব্যবহার করুন:", reply_markup=get_main_keyboard())
 
@@ -229,7 +242,31 @@ def handle_text_messages(message):
 def handle_inline_callback(call):
     chat_id = call.message.chat.id
     
-    if call.data.startswith('count_'):
+    if call.data.startswith('country_'):
+        parts = call.data.split('_')
+        serial = parts[1]
+        cuy = parts[2]
+        country_name = "Unknown"
+        for c in COUNTRIES:
+            if c['serial'] == serial:
+                country_name = c['name']
+                break
+        user_country[str(chat_id)] = {'serial': serial, 'cuy': cuy, 'name': country_name}
+        bot.answer_callback_query(call.id, f"✅ {country_name} সিলেক্ট করা হয়েছে!")
+        try:
+            bot.delete_message(chat_id, call.message.message_id)
+        except:
+            pass
+        bot.send_message(chat_id, 
+            f"✅ *কান্ট্রি সিলেক্ট করা হয়েছে!*\n\n"
+            f"🌍 {country_name}\n"
+            f"📌 Serial: {serial}\n"
+            f"📌 Code: {cuy.upper()}", 
+            parse_mode='Markdown',
+            reply_markup=get_main_keyboard()
+        )
+    
+    elif call.data.startswith('count_'):
         count = int(call.data.split('_')[1])
         bot.answer_callback_query(call.id, f"{count}টি নাম্বার নেওয়া হচ্ছে...")
         try:
@@ -245,6 +282,8 @@ def handle_inline_callback(call):
         except:
             pass
         user_states[str(chat_id)] = None
+        user_search[str(chat_id)] = False
+        bot.send_message(chat_id, "✅ বাতিল!", reply_markup=get_main_keyboard())
     
     elif call.data.startswith('check_'):
         phone = call.data.replace('check_', '')
@@ -267,6 +306,32 @@ def handle_inline_callback(call):
             pass
         bot.send_message(chat_id, "✅ ক্লিয়ার!", reply_markup=get_main_keyboard())
 
+# ============= স্টার্ট =============
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    chat_id = message.chat.id
+    if str(chat_id) not in user_country:
+        user_country[str(chat_id)] = {'serial': '56', 'cuy': 'bd', 'name': 'Bangladesh'}
+    
+    # ব্যালেন্স দেখান
+    try:
+        params = {'name': USERNAME, 'ApiKey': API_KEY}
+        data = call_api('getUserInfo', params)
+        balance = data.get('data', {}).get('score', 'N/A')
+    except:
+        balance = 'N/A'
+    
+    bot.send_message(chat_id, 
+        f"🌟 *ডুরিয়ান আরসিএস বটে স্বাগতম!*\n\n"
+        f"✅ *একাউন্ট:* {USERNAME}\n"
+        f"💰 *ব্যালেন্স:* {balance}\n"
+        f"🌍 *বর্তমান দেশ:* {user_country[str(chat_id)]['name']}\n\n"
+        f"👇 *নিচের বাটন ব্যবহার করুন*\n"
+        f"🔍 *Search Country* → নাম/শর্টকাট দিয়ে দেশ খুঁজুন", 
+        parse_mode='Markdown', 
+        reply_markup=get_main_keyboard()
+    )
+
 # ============= নাম্বার নেওয়া =============
 def get_multiple_numbers(chat_id, count):
     try:
@@ -278,22 +343,20 @@ def get_multiple_numbers(chat_id, count):
         success_count = 0
         
         # আপনার PID গুলো (Project ID)
-        # ডকুমেন্টেশন অনুযায়ী pid প্রয়োজন
         pids_to_try = ["7403", "7402", "7401", "7393", "7392"]
         
         for i in range(count):
             try:
                 found = False
                 for pid in pids_to_try:
-                    # serial=2 মানে সিঙ্গেল নাম্বার (ডকুমেন্টেশন অনুযায়ী)
                     params = {
                         'name': USERNAME,
                         'ApiKey': API_KEY,
                         'cuy': country['cuy'],
                         'pid': pid,
-                        'num': 1,  # ডকুমেন্টেশন অনুযায়ী 1-10
+                        'num': 1,
                         'noblack': 0,
-                        'serial': 2,  # 2 = সিঙ্গেল
+                        'serial': 2,
                         'secret_key': 'null',
                         'vip': 'null'
                     }
@@ -301,7 +364,6 @@ def get_multiple_numbers(chat_id, count):
                     print(f"📊 PID {pid}: {data}")
                     
                     if data.get('code') == 200:
-                        # সিঙ্গেল ডেটা ফরম্যাট: {"data": "+59173841704"}
                         phone_number = data.get('data')
                         if phone_number and isinstance(phone_number, str):
                             numbers.append(phone_number)
@@ -327,18 +389,16 @@ def get_multiple_numbers(chat_id, count):
                             start_monitoring(chat_id, phone_number)
                             break
                     else:
-                        # এরর কোড দেখান
                         error_msg = data.get('msg', 'Unknown error')
                         print(f"❌ PID {pid} ব্যর্থ: {error_msg}")
                         
-                        # বিশেষ এরর হ্যান্ডলিং
                         if data.get('code') == 403:
                             bot.send_message(chat_id, "⚠️ ব্যালেন্স কম! রিচার্জ করুন।")
                             return
                         elif data.get('code') == 904:
                             bot.send_message(chat_id, f"⚠️ PID {pid} সঠিক নয়!")
                         elif data.get('code') == 400906:
-                            bot.send_message(chat_id, f"⚠️ Serial প্যারামিটার ভুল! ({country['serial']})")
+                            bot.send_message(chat_id, f"⚠️ Serial প্যারামিটার ভুল!")
                 
                 if not found:
                     bot.send_message(chat_id, f"⚠️ নাম্বার {i+1} পেতে ব্যর্থ")
@@ -353,7 +413,7 @@ def get_multiple_numbers(chat_id, count):
             bot.send_message(chat_id, 
                 f"✅ *{success_count}টি নাম্বার পেলাম!*\n\n{numbers_text}\n\n"
                 f"🌍 দেশ: {country['name']}\n"
-                f"⏰ ৫ মিনিট ভ্যালিড (ডকুমেন্টেশন অনুযায়ী)\n"
+                f"⏰ ৫ মিনিট ভ্যালিড\n"
                 f"🤖 অটো OTP সক্রিয়\n"
                 f"💡 ৫ সেকেন্ড অপেক্ষা করে OTP পাঠান", 
                 parse_mode='Markdown'
@@ -400,20 +460,18 @@ def monitor_otp(chat_id, phone_number):
                 serial = num_data.get('serial', '56')
                 break
     
-    # ডকুমেন্টেশন অনুযায়ী: ৫ মিনিট ভ্যালিড
-    while time.time() - start_time < 300:  # ৫ মিনিট
+    while time.time() - start_time < 300:
         try:
             params = {
                 'name': USERNAME,
                 'ApiKey': API_KEY,
                 'pn': phone_number,
                 'pid': pid,
-                'serial': 2  # সিঙ্গেল
+                'serial': 2
             }
             data = call_api('getMsg', params)
             
             if data.get('code') == 200:
-                # সিঙ্গেল ডেটা ফরম্যাট: {"data": "123456"}
                 otp_code = data.get('data')
                 if otp_code:
                     if chat_id_str in user_data:
@@ -434,13 +492,11 @@ def monitor_otp(chat_id, phone_number):
                     break
             
             elif data.get('code') == 908:
-                # SMS not found - চালিয়ে যান
                 pass
             elif data.get('code') == 405:
                 bot.send_message(chat_id, f"⚠️ {phone_number} এর জন্য SMS পাওয়া যায়নি")
                 break
             
-            # ডকুমেন্টেশন অনুযায়ী: ১৫ সেকেন্ড পর পর চেক করুন
             time.sleep(15)
             
         except Exception as e:
@@ -459,7 +515,7 @@ def show_number_details(chat_id, phone):
             if num_data['phone'] == phone:
                 status = "✅" if num_data['otp_received'] else "⏳"
                 otp = num_data['otp_code'] if num_data['otp_code'] else "N/A"
-                remaining = int(300 - (time.time() - num_data['timestamp']))  # ৫ মিনিট
+                remaining = int(300 - (time.time() - num_data['timestamp']))
                 bot.send_message(chat_id, 
                     f"📱 `{phone}`\n"
                     f"স্ট্যাটাস: {status}\n"
@@ -545,17 +601,18 @@ def show_help(message):
     bot.send_message(message.chat.id, """
 📚 *হেল্প:*
 
-📱 Get Number - নাম্বার নিন (৫ মিনিট ভ্যালিড)
-🌍 Change Country - দেশ পরিবর্তন
-💰 Balance - ব্যালেন্স চেক
-📊 Status - স্ট্যাটাস দেখুন
-📜 Active Numbers - অ্যাক্টিভ নাম্বার দেখুন
-🗑️ Clear All - সব ক্লিয়ার
-ℹ️ Help - এই মেসেজ
+🔍 **Search Country** - নাম/শর্টকাট দিয়ে দেশ খুঁজুন
+   যেমন: `bd`, `bangladesh`, `us`, `india`
+
+📱 **Get Number** - নাম্বার নিন (৫ মিনিট ভ্যালিড)
+💰 **Balance** - ব্যালেন্স চেক
+📊 **Status** - স্ট্যাটাস দেখুন
+📜 **Active Numbers** - অ্যাক্টিভ নাম্বার দেখুন
+🗑️ **Clear All** - সব ক্লিয়ার
+ℹ️ **Help** - এই মেসেজ
 
 ✨ *অটো ফিচার:*
 • OTP আসলেই অটো নোটিফিকেশন
-• ব্যাকগ্রাউন্ড মনিটরিং
 • ১৫ সেকেন্ড পর পর OTP চেক
 
 📌 *টিপস:*
