@@ -10,41 +10,75 @@ import os
 
 print("🚀 বট লোড হচ্ছে...")
 
-# ============= আপনার সঠিক ডেটা =============
+# ============= আপনার ডেটা =============
 BOT_TOKEN = "8807543327:AAFxZsJgSbi4wvl0pv1K_yWv6eu0MpkN500"
 USERNAME = "Rabbi2780"
-API_KEY = "L0J0SG9iVkl2SUxiQ0VEUlZ6SE5zUT09"  # ← এইটা আপনার আসল কী
+API_KEY = "L0J0SG9iVkl2SUxiQ0VEUlZ6SE5zUT09"
 API_BASE_URL = "https://api.durianrcs.com/out/ext_api"
 
 print("✅ কনফিগারেশন লোড হয়েছে")
 
-# ============= সাপোর্টেড কান্ট্রি লিস্ট =============
+# ============= সাপোর্টেড কান্ট্রি (আপনার স্ক্রিনশট থেকে) =============
 COUNTRIES = [
-    {"serial": "56", "name": "Bangladesh", "cuy": "bd"},
-    {"serial": "15", "name": "India", "cuy": "in"},
-    {"serial": "43", "name": "United States", "cuy": "us"},
-    {"serial": "22", "name": "Malaysia", "cuy": "my"},
-    {"serial": "33", "name": "Singapore", "cuy": "sg"},
-    {"serial": "39", "name": "Thailand", "cuy": "th"},
-    {"serial": "34", "name": "Viet Nam", "cuy": "vn"},
-    {"serial": "28", "name": "Philippines", "cuy": "ph"},
-    {"serial": "16", "name": "Indonesia", "cuy": "id"},
-    {"serial": "18", "name": "Japan", "cuy": "jp"},
-    {"serial": "5", "name": "Brazil", "cuy": "br"},
-    {"serial": "23", "name": "Mexico", "cuy": "mx"},
-    {"serial": "12", "name": "Germany", "cuy": "de"},
-    {"serial": "11", "name": "France", "cuy": "fr"},
-    {"serial": "37", "name": "Spain", "cuy": "es"},
-    {"serial": "2", "name": "Australia", "cuy": "au"},
     {"serial": "1", "name": "Argentina", "cuy": "ar"},
+    {"serial": "2", "name": "Australia", "cuy": "au"},
+    {"serial": "3", "name": "Austria", "cuy": "at"},
+    {"serial": "4", "name": "Bahrain", "cuy": "bh"},
+    {"serial": "5", "name": "Brazil", "cuy": "br"},
     {"serial": "6", "name": "Chile", "cuy": "cl"},
     {"serial": "7", "name": "Colombia", "cuy": "co"},
+    {"serial": "8", "name": "Czech Republic", "cuy": "cz"},
+    {"serial": "9", "name": "Ecuador", "cuy": "eo"},
+    {"serial": "10", "name": "Finland", "cuy": "fi"},
+    {"serial": "11", "name": "France", "cuy": "fr"},
+    {"serial": "12", "name": "Germany", "cuy": "de"},
+    {"serial": "13", "name": "Ghana", "cuy": "gh"},
+    {"serial": "14", "name": "Hungary", "cuy": "hu"},
+    {"serial": "15", "name": "India", "cuy": "in"},
+    {"serial": "16", "name": "Indonesia", "cuy": "id"},
+    {"serial": "17", "name": "Ireland", "cuy": "ie"},
+    {"serial": "18", "name": "Japan", "cuy": "jp"},
+    {"serial": "19", "name": "Jordan", "cuy": "jo"},
     {"serial": "20", "name": "Kenya", "cuy": "ke"},
+    {"serial": "21", "name": "Luxembourg", "cuy": "lu"},
+    {"serial": "22", "name": "Malaysia", "cuy": "my"},
+    {"serial": "23", "name": "Mexico", "cuy": "mx"},
+    {"serial": "24", "name": "Netherlands", "cuy": "nl"},
     {"serial": "25", "name": "Nigeria", "cuy": "ng"},
-    {"serial": "36", "name": "South Africa", "cuy": "za"},
-    {"serial": "42", "name": "Egypt", "cuy": "eg"},
+    {"serial": "26", "name": "Norway", "cuy": "no"},
+    {"serial": "27", "name": "Panama", "cuy": "pa"},
+    {"serial": "28", "name": "Philippines", "cuy": "ph"},
+    {"serial": "29", "name": "Poland", "cuy": "pl"},
+    {"serial": "30", "name": "Portugal", "cuy": "pt"},
+    {"serial": "31", "name": "Romania", "cuy": "ro"},
     {"serial": "32", "name": "Saudi Arabia", "cuy": "sa"},
+    {"serial": "33", "name": "Singapore", "cuy": "sg"},
+    {"serial": "34", "name": "Viet Nam", "cuy": "vn"},
+    {"serial": "35", "name": "Slovenia", "cuy": "si"},
+    {"serial": "36", "name": "South Africa", "cuy": "za"},
+    {"serial": "37", "name": "Spain", "cuy": "es"},
+    {"serial": "38", "name": "Switzerland", "cuy": "ch"},
+    {"serial": "39", "name": "Thailand", "cuy": "th"},
     {"serial": "40", "name": "UAE", "cuy": "ae"},
+    {"serial": "41", "name": "Macedonia", "cuy": "mk"},
+    {"serial": "42", "name": "Egypt", "cuy": "eg"},
+    {"serial": "43", "name": "United States", "cuy": "us"},
+    {"serial": "44", "name": "Andorra", "cuy": "ad"},
+    {"serial": "45", "name": "Afghanistan", "cuy": "af"},
+    {"serial": "46", "name": "Antigua", "cuy": "ag"},
+    {"serial": "47", "name": "Anguilla", "cuy": "ai"},
+    {"serial": "48", "name": "Albania", "cuy": "al"},
+    {"serial": "49", "name": "Armenia", "cuy": "am"},
+    {"serial": "50", "name": "Angola", "cuy": "ao"},
+    {"serial": "51", "name": "American Samoa", "cuy": "as"},
+    {"serial": "52", "name": "Aruba", "cuy": "aw"},
+    {"serial": "53", "name": "Azerbaijan", "cuy": "az"},
+    {"serial": "54", "name": "Bosnia", "cuy": "bs"},
+    {"serial": "55", "name": "Barbados", "cuy": "bb"},
+    {"serial": "56", "name": "Bangladesh", "cuy": "bd"},
+    {"serial": "57", "name": "Belgium", "cuy": "be"},
+    {"serial": "58", "name": "Burkina Faso", "cuy": "bt"},
+    {"serial": "59", "name": "Bulgaria", "cuy": "bg"},
 ]
 
 print(f"✅ {len(COUNTRIES)}টি দেশ লোড হয়েছে")
@@ -74,7 +108,7 @@ def call_api(endpoint, params=None):
     try:
         url = f"{API_BASE_URL}/{endpoint}"
         if params:
-            filtered_params = {k: v for k, v in params.items() if v}
+            filtered_params = {k: v for k, v in params.items() if v is not None and v != 'null'}
             url += "?" + "&".join([f"{k}={v}" for k, v in filtered_params.items()])
         print(f"📡 {url}")
         response = requests.get(url, timeout=15)
@@ -243,21 +277,23 @@ def get_multiple_numbers(chat_id, count):
         numbers = []
         success_count = 0
         
-        # PID গুলো ট্রাই করুন
-        pids_to_try = ["7403", "7402", "7401", "7393", "7392", "1", "123"]
+        # আপনার PID গুলো (Project ID)
+        # ডকুমেন্টেশন অনুযায়ী pid প্রয়োজন
+        pids_to_try = ["7403", "7402", "7401", "7393", "7392"]
         
         for i in range(count):
             try:
                 found = False
                 for pid in pids_to_try:
+                    # serial=2 মানে সিঙ্গেল নাম্বার (ডকুমেন্টেশন অনুযায়ী)
                     params = {
                         'name': USERNAME,
                         'ApiKey': API_KEY,
                         'cuy': country['cuy'],
                         'pid': pid,
-                        'num': 5,
+                        'num': 1,  # ডকুমেন্টেশন অনুযায়ী 1-10
                         'noblack': 0,
-                        'serial': country['serial'],
+                        'serial': 2,  # 2 = সিঙ্গেল
                         'secret_key': 'null',
                         'vip': 'null'
                     }
@@ -265,8 +301,9 @@ def get_multiple_numbers(chat_id, count):
                     print(f"📊 PID {pid}: {data}")
                     
                     if data.get('code') == 200:
-                        phone_number = data.get('data', {}).get('mobile')
-                        if phone_number:
+                        # সিঙ্গেল ডেটা ফরম্যাট: {"data": "+59173841704"}
+                        phone_number = data.get('data')
+                        if phone_number and isinstance(phone_number, str):
                             numbers.append(phone_number)
                             success_count += 1
                             found = True
@@ -290,7 +327,18 @@ def get_multiple_numbers(chat_id, count):
                             start_monitoring(chat_id, phone_number)
                             break
                     else:
-                        print(f"❌ PID {pid} ব্যর্থ: {data.get('msg')}")
+                        # এরর কোড দেখান
+                        error_msg = data.get('msg', 'Unknown error')
+                        print(f"❌ PID {pid} ব্যর্থ: {error_msg}")
+                        
+                        # বিশেষ এরর হ্যান্ডলিং
+                        if data.get('code') == 403:
+                            bot.send_message(chat_id, "⚠️ ব্যালেন্স কম! রিচার্জ করুন।")
+                            return
+                        elif data.get('code') == 904:
+                            bot.send_message(chat_id, f"⚠️ PID {pid} সঠিক নয়!")
+                        elif data.get('code') == 400906:
+                            bot.send_message(chat_id, f"⚠️ Serial প্যারামিটার ভুল! ({country['serial']})")
                 
                 if not found:
                     bot.send_message(chat_id, f"⚠️ নাম্বার {i+1} পেতে ব্যর্থ")
@@ -305,8 +353,9 @@ def get_multiple_numbers(chat_id, count):
             bot.send_message(chat_id, 
                 f"✅ *{success_count}টি নাম্বার পেলাম!*\n\n{numbers_text}\n\n"
                 f"🌍 দেশ: {country['name']}\n"
-                f"⏰ ১০ মিনিট ভ্যালিড\n"
-                f"🤖 অটো OTP সক্রিয়", 
+                f"⏰ ৫ মিনিট ভ্যালিড (ডকুমেন্টেশন অনুযায়ী)\n"
+                f"🤖 অটো OTP সক্রিয়\n"
+                f"💡 ৫ সেকেন্ড অপেক্ষা করে OTP পাঠান", 
                 parse_mode='Markdown'
             )
             
@@ -317,7 +366,13 @@ def get_multiple_numbers(chat_id, count):
             markup.add(types.InlineKeyboardButton("🗑️ ক্লিয়ার", callback_data="clear_all"))
             bot.send_message(chat_id, "👇 ডিটেইলস:", reply_markup=markup)
         else:
-            bot.send_message(chat_id, "❌ কোনো নাম্বার পাইনি!\n\n💡 অন্য দেশ ট্রাই করুন।")
+            bot.send_message(chat_id, 
+                f"❌ কোনো নাম্বার পাইনি!\n\n"
+                f"💡 *টিপস:*\n"
+                f"• অন্য দেশ ট্রাই করুন\n"
+                f"• ব্যালেন্স চেক করুন (/balance)\n"
+                f"• PID সঠিক কিনা চেক করুন"
+            )
             
     except Exception as e:
         bot.send_message(chat_id, f"❌ {str(e)}")
@@ -345,50 +400,52 @@ def monitor_otp(chat_id, phone_number):
                 serial = num_data.get('serial', '56')
                 break
     
-    while time.time() - start_time < 600:
+    # ডকুমেন্টেশন অনুযায়ী: ৫ মিনিট ভ্যালিড
+    while time.time() - start_time < 300:  # ৫ মিনিট
         try:
             params = {
                 'name': USERNAME,
                 'ApiKey': API_KEY,
                 'pn': phone_number,
                 'pid': pid,
-                'serial': serial
+                'serial': 2  # সিঙ্গেল
             }
             data = call_api('getMsg', params)
             
             if data.get('code') == 200:
-                messages = data.get('data', {}).get('messages', [])
-                if messages and len(messages) > last_msg_count:
-                    new_messages = messages[last_msg_count:]
-                    last_msg_count = len(messages)
+                # সিঙ্গেল ডেটা ফরম্যাট: {"data": "123456"}
+                otp_code = data.get('data')
+                if otp_code:
+                    if chat_id_str in user_data:
+                        for num_data in user_data[chat_id_str]['numbers']:
+                            if num_data['phone'] == phone_number:
+                                num_data['otp_received'] = True
+                                num_data['otp_code'] = otp_code
+                                num_data['full_message'] = otp_code
+                                break
                     
-                    for msg in new_messages:
-                        msg_text = msg.get('content', '')
-                        otp_matches = re.findall(r'\b\d{4,6}\b', msg_text)
-                        otp_code = otp_matches[0] if otp_matches else None
-                        
-                        if chat_id_str in user_data:
-                            for num_data in user_data[chat_id_str]['numbers']:
-                                if num_data['phone'] == phone_number:
-                                    num_data['otp_received'] = True
-                                    num_data['otp_code'] = otp_code
-                                    num_data['full_message'] = msg_text
-                                    break
-                        
-                        bot.send_message(chat_id, 
-                            f"🔔 *OTP পাওয়া গেছে!*\n\n"
-                            f"📱 নাম্বার: `{phone_number}`\n"
-                            f"🔑 কোড: `{otp_code if otp_code else 'পাইনি'}`\n"
-                            f"📩 মেসেজ: {msg_text}\n"
-                            f"⏰ {datetime.now().strftime('%I:%M %p')}", 
-                            parse_mode='Markdown'
-                        )
+                    bot.send_message(chat_id, 
+                        f"🔔 *OTP পাওয়া গেছে!*\n\n"
+                        f"📱 নাম্বার: `{phone_number}`\n"
+                        f"🔑 কোড: `{otp_code}`\n"
+                        f"⏰ {datetime.now().strftime('%I:%M %p')}", 
+                        parse_mode='Markdown'
+                    )
+                    break
             
-            time.sleep(5)
+            elif data.get('code') == 908:
+                # SMS not found - চালিয়ে যান
+                pass
+            elif data.get('code') == 405:
+                bot.send_message(chat_id, f"⚠️ {phone_number} এর জন্য SMS পাওয়া যায়নি")
+                break
+            
+            # ডকুমেন্টেশন অনুযায়ী: ১৫ সেকেন্ড পর পর চেক করুন
+            time.sleep(15)
             
         except Exception as e:
             print(f"⚠️ {e}")
-            time.sleep(10)
+            time.sleep(15)
     
     thread_key = f"{chat_id}_{phone_number}"
     if thread_key in monitoring_threads:
@@ -402,7 +459,7 @@ def show_number_details(chat_id, phone):
             if num_data['phone'] == phone:
                 status = "✅" if num_data['otp_received'] else "⏳"
                 otp = num_data['otp_code'] if num_data['otp_code'] else "N/A"
-                remaining = int(600 - (time.time() - num_data['timestamp']))
+                remaining = int(300 - (time.time() - num_data['timestamp']))  # ৫ মিনিট
                 bot.send_message(chat_id, 
                     f"📱 `{phone}`\n"
                     f"স্ট্যাটাস: {status}\n"
@@ -419,7 +476,7 @@ def show_all_status(chat_id):
         for num_data in user_data[chat_id_str]['numbers']:
             status = "✅" if num_data['otp_received'] else "⏳"
             otp = num_data['otp_code'] if num_data['otp_code'] else "..."
-            remaining = int(600 - (time.time() - num_data['timestamp']))
+            remaining = int(300 - (time.time() - num_data['timestamp']))
             text += f"{status} `{num_data['phone']}` → `{otp}` ({remaining}s)\n"
         bot.send_message(chat_id, text, parse_mode='Markdown')
 
@@ -430,7 +487,7 @@ def show_active_numbers(message):
     if chat_id_str in user_data and user_data[chat_id_str]['numbers']:
         text = "📱 *আপনার অ্যাক্টিভ নাম্বার:*\n\n"
         for i, num_data in enumerate(user_data[chat_id_str]['numbers'], 1):
-            remaining = int(600 - (time.time() - num_data['timestamp']))
+            remaining = int(300 - (time.time() - num_data['timestamp']))
             if remaining > 0:
                 status = "✅ OTP পেয়েছে" if num_data['otp_received'] else "⏳ অপেক্ষমান"
                 text += f"{i}. `{num_data['phone']}`\n   → {status}\n   → {remaining}সেকেন্ড বাকি\n\n"
@@ -475,7 +532,8 @@ def check_balance(message):
             balance = data.get('data', {}).get('score', 'N/A')
             bot.send_message(chat_id, 
                 f"💰 *ব্যালেন্স: {balance}*\n\n"
-                f"👤 *একাউন্ট:* {USERNAME}", 
+                f"👤 *একাউন্ট:* {USERNAME}\n"
+                f"📅 *জয়েন:* {data.get('data', {}).get('create_date', 'N/A')}", 
                 parse_mode='Markdown'
             )
         else:
@@ -487,7 +545,7 @@ def show_help(message):
     bot.send_message(message.chat.id, """
 📚 *হেল্প:*
 
-📱 Get Number - নাম্বার নিন
+📱 Get Number - নাম্বার নিন (৫ মিনিট ভ্যালিড)
 🌍 Change Country - দেশ পরিবর্তন
 💰 Balance - ব্যালেন্স চেক
 📊 Status - স্ট্যাটাস দেখুন
@@ -498,7 +556,12 @@ def show_help(message):
 ✨ *অটো ফিচার:*
 • OTP আসলেই অটো নোটিফিকেশন
 • ব্যাকগ্রাউন্ড মনিটরিং
-• ইনলাইন বাটন কন্ট্রোল
+• ১৫ সেকেন্ড পর পর OTP চেক
+
+📌 *টিপস:*
+• নাম্বার পেয়ে ৫ সেকেন্ড পর OTP পাঠান
+• ৫ মিনিট ভ্যালিড
+• SMS না এলে ১৫ সেকেন্ড পর আবার চেক করুন
     """, parse_mode='Markdown')
 
 # ============= চালান =============
@@ -507,7 +570,6 @@ if __name__ == "__main__":
     print("🤖 ডুরিয়ান আরসিএস বট চালু হচ্ছে...")
     print(f"👤 ইউজারনাম: {USERNAME}")
     print(f"🔑 API কী: {API_KEY[:10]}...")
-    print(f"💰 ব্যালেন্স: 923 পয়েন্ট")
     print(f"🌍 সাপোর্টেড দেশ: {len(COUNTRIES)}টি")
     print("=" * 50)
     print("✅ বট প্রস্তুত! টেলিগ্রামে /start দিন")
